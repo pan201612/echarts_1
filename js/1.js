@@ -20,6 +20,8 @@
     }
 })();
 
+
+//点位分布统计图
 (function () {
     var myChart = echarts.init(document.getElementsByClassName('left')[0]);
 
@@ -87,12 +89,6 @@
         myChart.resize();
     })
 })()
-
-
-
-
-
-
 
 
 
