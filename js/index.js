@@ -26,7 +26,6 @@
     var option = {
         color: ['#006cff', '#60cda0', '#ed8884', '#ff9f7f', '#0096ff', '#9fe6b8', '#32c5e9', '#1d9dff'],
         tooltip: {
-            // item 表述 鼠标到饼图的每一项内容的时候 触发提示信息
             trigger: 'item',
             // a:series 选项下面的name
             // b:  series下面data中的name

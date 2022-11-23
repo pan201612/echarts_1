@@ -181,14 +181,39 @@ h3,h4{
   .box4{
       width: 100%;
       height: 2.7rem;
-      background-color: #83caa6;
       display: flex;
+      
       
   }
   .left{
       flex: 2;
-      background-color: antiquewhite;
   }
   .right{
       flex: 1;
+      background-image: url(../images/rect.png);
+      background-size: cover;
+  }
+  .right>ul>li>h4{
+    font-size: .40rem;
+     color: #fff;
+     margin-bottom: .125rem;
+
+  }
+  .right>ul>li{
+      display: flex;
+     flex-direction: column;
+    align-items: center;
+    margin-top: .25rem;
+      
+  }
+  .right>ul>li>span{
+       font-size: .18rem;
+       color: #f8ab05;
+  }
+  .right>ul>li>span>i{
+    display: inline-block;
+      width: .08rem;
+      height: .2rem;
+      background-color: #2d6af6;
+      border-radius: .1rem;
   }
