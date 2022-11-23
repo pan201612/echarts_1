@@ -69,17 +69,10 @@
     myChart.setOption(option);
 
 
-    // 解决echarts设置option后 ，图标特别小的情况
-    //页面加载的时候 调用echarts实例对象的reszie（）方法
-    // 必须使用时间监听
-
-
     window.addEventListener('load', function () {
         myChart.resize();
     });
 
-    // 当屏幕重置大小的时候 继续调用echarts的重置大小方法
-    // 自动适应当前屏幕
     window.addEventListener('resize', function () {
         myChart.resize();
     })
