@@ -24,12 +24,13 @@ h3,h4{
   }
   .box1{
      flex: 3;
-     /* background-color: aquamarine; */
+    
   }
   .box1:nth-of-type(2){
     flex: 4;
-    background-color: skyblue;
-    margin:.925rem .125rem 0;
+    margin:.7rem .125rem 0;
+    padding: 0 .125rem;
+    box-sizing: border-box;
       
   }
 
@@ -139,7 +140,6 @@ h3,h4{
   }
   .data{
       height: 5rem;
-      /* background-color: #1950c4; */
       overflow: hidden;
 
   }
@@ -149,7 +149,6 @@ h3,h4{
   }
   .data>ul>li{
     height: .45rem;
-    /* background-color: antiquewhite; */
     display: flex;
   }
   .box3{
@@ -217,3 +216,55 @@ h3,h4{
       background-color: #2d6af6;
       border-radius: .1rem;
   }
+
+  /* 地图 */
+  .map{
+    height: 8.2rem;
+    width: 100%;
+  }
+  .map>h3{
+    font-size: .30rem;
+    color: #fff;
+    display: flex;
+  }
+  .map>h3>span{
+    background: url(../images/shebei.png) no-repeat;
+    background-size: cover;
+    width: .32rem;
+    height: .32rem;
+    margin-right: .125rem;
+  }
+  .chart{
+    height: 7.7rem;
+    background-color: #1429576c;
+    margin-top: .125rem;
+  }
+  /* 用户 */
+.users{
+  margin-top: .4rem;
+  height: 2.7rem;
+}
+.box5{
+  height: 2.6rem;
+  display: flex;
+}
+.stat{
+  flex: 2;
+  margin-right: .125rem;
+}
+/* 订单 */
+.indent{
+  height: 1.5rem;
+}
+.filter{
+  height: .5rem;
+  background-color: #83caa6;
+  display: flex;
+  align-items: center;
+}
+.filter>a{
+  width: 1.25rem;
+  border-right: .0475rem solid #6feeef;
+  font-size: .25rem;
+  text-align: center;
+}
