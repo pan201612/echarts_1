@@ -195,5 +195,198 @@
 })();
 
 
+// 数据切换
+(function () {
+    var day = document.getElementsByClassName('filter')[0].children;
+    var information = document.getElementsByClassName('information');
+    // console.log(day);
+    var timer;
+    var index_ = 0;
+    for (var i = 0; i < day.length; i++) {
+        day[i].setAttribute('index', i);
+        day[i].onclick = function () {
+            index_ = this.getAttribute('index');
+            for (var j = 0; j < day.length; j++) {
+                day[j].classList.remove('active');
+                day[index_].classList.add('active');
+            }
+            for (var k = 0; k < information.length; k++) {
+                information[k].classList.add('conceal');
+                information[index_].classList.remove('conceal');
+            }
+        }
+
+    }
+    function autoCheck() {
+        timer = setInterval(function () {
+            index_++;
+            if (index_ >= day.length) {
+                index_ = 0;
+            }
+            day[index_].click();
+        }, 1500);
+
+    }
+    autoCheck();
+
+    // 当鼠标移入indext时停止跳动
+    var indent = document.getElementsByClassName('indent')[0];
+    indent.onmouseenter = function () {
+        clearInterval(timer);
+    }
+
+
+    indent.onmouseleave = function () {
+        autoCheck(), 1500;
+    }
+})();
+
+// 销售统计
+
+(function () {
+
+    // 折线图
+
+    //准备的销售数据
+    var data = {
+        year: [
+            [24, 40, 101, 134, 90, 230, 210, 230, 120, 230, 210, 120],
+            [40, 64, 191, 324, 290, 330, 310, 213, 180, 200, 180, 79]
+        ],
+        quarter: [
+            [23, 75, 12, 97, 21, 67, 98, 21, 43, 64, 76, 38],
+            [43, 31, 65, 23, 78, 21, 82, 64, 43, 60, 19, 34]
+        ],
+        month: [
+            [34, 87, 32, 76, 98, 12, 32, 87, 39, 36, 29, 36],
+            [56, 43, 98, 21, 56, 87, 43, 12, 43, 54, 12, 98]
+        ],
+        week: [
+            [43, 73, 62, 54, 91, 54, 84, 43, 86, 43, 54, 53],
+            [32, 54, 34, 87, 32, 45, 62, 68, 93, 54, 54, 24]
+        ]
+    }
+    var myChart = echarts.init(document.getElementsByClassName('picture')[0]);
+    var option = {
+        legend: {
+            data: ['预期销售额', '实际销售额'],
+            textStyle: {
+                color: '#4c9bfd' // 图例文字颜色
+            }
+        },
+        grid: {
+            left: '3%',
+            right: '4%',
+            bottom: '3%',
+            top: '15%',
+            containLabel: true,
+            show: true,
+            borderColor: '#012f4a'// 边框颜色
+        },
+
+        color: ['#00f2f1', '#ed3f35'],
+        xAxis: {
+            type: 'category',
+            boundaryGap: false,
+            axisTick: {
+                show: false
+            },
+            axisLabel: {
+                color: '#4c9bfd'
+            },
+            data: ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月']
+        },
+        yAxis: {
+            type: 'value',
+            axisTick: {
+                show: false
+            },
+            axisLabel: {
+                color: "#4c9bfd"
+            },
+            splitLine: {
+                lineStyle: {
+                    color: '#012f4a' // 分割线颜色
+                }
+            }
+        },
+        series: [
+
+            {
+                name: '预期销售额',
+                type: 'line',
+                stack: 'b',
+                smooth: true,
+                data: data.year[0]
+            },
+            {
+                name: '实际销售额',
+                type: 'line',
+                stack: 'a',
+                smooth: true,
+                data: data.year[1]
+            }
+        ]
+    };
+
+    myChart.setOption(option);
+
+
+    window.addEventListener('load', function () {
+        myChart.resize();
+    });
+
+    window.addEventListener('resize', function () {
+        myChart.resize();
+    });
+
+
+
+    var year = document.getElementsByClassName('statistics')[0].children;
+    // console.log(year);
+    var index_ = 0;
+    var timer;
+    for (var i = 1; i < year.length; i++) {
+        year[i].setAttribute('index_', i);
+        year[i].onclick = function () {
+            index_ = this.getAttribute('index_');
+            for (var j = 1; j < year.length; j++) {
+                year[j].classList.remove('bj');
+                year[index_].classList.add('bj');
+            }
+            // 获取自定义属性携带的时间
+
+            var dataTime = this.getAttribute('data-time');
+            option.series[0].data = data[dataTime][0];
+            option.series[1].data = data[dataTime][1];
+
+            myChart.setOption(option);
+        }
+    }
+    function autoCheck() {
+        timer = setInterval(function () {
+            index_++;
+            if (index_ >= year.length) {
+                index_ = 0;
+            }
+            year[index_].click();
+        }, 1500);
+
+    }
+    autoCheck();
+
+    // 当鼠标移入indext时停止跳动
+    var picture = document.getElementsByClassName('picture')[0];
+    picture.onmouseenter = function () {
+        clearInterval(timer);
+    }
+
+
+    picture.onmouseleave = function () {
+        autoCheck(), 1500;
+    }
+
+})()
+
 
 

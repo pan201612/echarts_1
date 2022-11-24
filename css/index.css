@@ -258,7 +258,6 @@ h3,h4{
 }
 .filter{
   height: .5rem;
-  background-color: #83caa6;
   display: flex;
   align-items: center;
 }
@@ -267,4 +266,103 @@ h3,h4{
   border-right: .0475rem solid #6feeef;
   font-size: .25rem;
   text-align: center;
+  color: #2d6af6;
+}
+.information{
+  height: 1.3rem;
+}
+.information>ul{
+  width: 100%;
+  height: 100%;
+  padding: 0 .285rem;
+  box-sizing: border-box;
+}
+.information>ul>li{
+  width: 40%;
+  height: 100%;
+  float: left;
+  font-size: .25rem;
+  line-height: .5rem;
+  margin-right: .185rem;
+}
+.information>ul>li>h4{
+  font-size: .35rem;
+   color: #fff;
+   margin-bottom: .125rem;
+
+}
+.information>ul>li>span{
+  color: #4c9bfd;
+}
+.line{
+  width: .0625rem;
+  height: .185rem;
+  border-radius: .0625rem;
+  display: inline-block;
+}
+.conceal{
+  display: none;
+}
+
+/* 销售订单 */
+.market{
+  height: 3rem;
+}
+.statistics{
+  height: .5rem;
+  display: flex;
+  align-items: center;
+  
+}
+
+.statistics>h3{
+  width: 1.625rem;
+  font-size: .30rem;
+  color: #fff;
+  margin-right: .325rem;
+  border-right: .0375rem solid #6feeef;
+ 
+}
+.statistics>a{
+  width: .6rem;
+  font-size: .25rem;
+  text-align: center;
+  color: #4c9bfd;
+
+}
+.bj{
+  
+  color: #fff !important;
+  background-color: #4c9bfd;
+  border-radius: .0625rem;
+}
+.picture{
+  height: 2.5rem;
+  margin-top: .125rem;
+  position: relative;
+}
+.span{
+  display: block;
+  width: 1.2rem;
+  height: .35rem;
+  position: absolute;
+  top: .9rem;
+  left: .5rem;
+  font-size: .25rem;
+  color: #4c9bfd;
+
+}
+/* 渠道 */
+.ditch{
+  height: 3.5rem;
+  display: flex;
+  
+}
+.Lleft{
+  flex: 5;
+}
+.Lright{
+  flex: 1;
+  margin-left: .25rem;
+
 }
