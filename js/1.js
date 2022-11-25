@@ -386,6 +386,106 @@
         autoCheck(), 1500;
     }
 
+})();
+
+// 雷达图
+(function () {
+    var myChart = echarts.init(document.getElementsByClassName('box6')[0]);
+
+    var option = {
+        // backgroundColor: '#161627',
+        title: {
+            textStyle: {
+                color: '#eee'
+            }
+        },
+        legend: {
+            bottom: 5,
+            data: ['Beijing'],
+            itemGap: 20,
+            textStyle: {
+                color: '#fff',
+                fontSize: 14
+            },
+            selectedMode: 'single'
+        },
+
+        radar: {
+            indicator: [
+                { name: '机场', max: 100 },
+                { name: '商场', max: 100 },
+                { name: '火车站', max: 100 },
+                { name: '汽车站', max: 100 },
+                { name: '地铁', max: 100 }
+            ],
+            radius: ["0%", "53%"],
+            shape: 'circle',
+            splitNumber: 5,
+            axisName: {
+                color: '#4c9bfd'
+            },
+            splitLine: {
+                lineStyle: {
+                    color: 'rgba(255, 255, 255, 0.5)'
+                }
+            },
+            splitArea: {
+                show: false
+            },
+            axisLine: {
+                lineStyle: {
+                    color: 'rgba(255, 255, 255, 0.5)',
+                    // width: 2
+                }
+            }
+        },
+        tooltip: {
+            show: true,
+            position: ['60%', '0%'],
+            backgroundColor: 'rgba(255, 255, 255, 0.5)'
+        },
+        series: [
+            {
+                // name: 'Beijing',
+                type: 'radar',
+                lineStyle: { width: 2 },
+                data: [[90, 100, 56, 11, 34]],
+                symbol: 'circle',
+                symbolSize: 6,
+                itemStyle: {
+                    color: '#fff'
+
+                },
+                label: {
+                    show: true
+                },
+                areaStyle: {
+                    color: 'rgba(238, 197, 102, 0.6)',
+
+                }
+            }
+
+        ]
+    };
+
+
+
+
+
+
+
+    myChart.setOption(option);
+
+
+    window.addEventListener('load', function () {
+        myChart.resize();
+    });
+
+    window.addEventListener('resize', function () {
+        myChart.resize();
+    });
+
+
 })()
 
 
