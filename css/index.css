@@ -354,7 +354,7 @@ h3,h4{
 }
 /* 渠道 */
 .ditch{
-  height: 3.5rem;
+  height: 3.2rem;
   display: flex;
   
 }
@@ -377,15 +377,15 @@ h3,h4{
   flex-direction: column;
 }
 .box7>h3{
-  flex: 5;
+  flex: 1;
   font-size: .40rem;
     color: #fff;
     text-align: center;
-    padding-top: .55rem;
+    padding-top: .25rem;
     box-sizing: border-box;
 }
 .box7>ul{
-  flex: 5;
+  flex: 3;
   display: flex;
   
 }
@@ -411,10 +411,44 @@ h3,h4{
 }
 /* 小水滴 */
 .box8{
-  height: 1.8rem;
+  height: 2.2rem;
 }
 .box9{
-  height: 1.69rem;
-  background-color: #6feeef;
+  height: 2.2rem;
+  /* background-color: #6feeef; */
   display: flex;
 }
+.Pleft{
+  flex: 2;
+  /* background-color: #f8ab05; */
+}
+.Pright{
+  flex: 1;
+  background-image: url(../images/rect.png);
+  background-size: cover;
+}
+.Pright>ul>li>h4{
+font-size: .40rem;
+ color: #fff;
+ margin-bottom: .125rem;
+
+}
+.Pright>ul>li{
+  display: flex;
+ flex-direction: column;
+align-items: center;
+margin-top: .25rem;
+  
+}
+.Pright>ul>li>span{
+   font-size: .18rem;
+   color: #f8ab05;
+}
+.Pright>ul>li>span>i{
+display: inline-block;
+  width: .08rem;
+  height: .2rem;
+  background-color: #2d6af6;
+  border-radius: .1rem;
+}
+
